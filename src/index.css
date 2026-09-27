@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-ivory: #F6F4EE;
+  --color-ivory-light: #FAF9F6;
+  --color-ivory-dim: #DCD8CD;
+  --color-charcoal-950: #09090A;
+  --color-charcoal-900: #0F0F11;
+  --color-charcoal-800: #17171A;
+  --color-charcoal-700: #242429;
+  --color-silver-warm: #C8C5BC;
+  --color-silver-muted: #8E8A81;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #0C0C0D;
+    color: #ECE9E2;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+    font-feature-settings: "liga" 1, "dlig" 1;
+  }
+}
+
+/* Custom cinematic transitions */
+.editorial-mask {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* Subtle image scale effect */
+.editorial-img-zoom {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.editorial-img-zoom:hover {
+  transform: scale(1.03);
+}
